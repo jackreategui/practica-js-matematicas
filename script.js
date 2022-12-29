@@ -1,6 +1,6 @@
 const ladoCuadrado = 6;
 const perimetroCuadrado = ladoCuadrado * 4;
-const areaCuadrado = ladoCuadrado * ladoCuadrado;
+const areaCuadrado = ladoCuadrado * 2;
 
 console.log({
   ladoCuadrado,
