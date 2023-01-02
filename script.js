@@ -51,6 +51,18 @@ function calcularTriangulo(lado1, lado2, base, altura){
   }
 }
 
+// Triangulo isosceles
+
+function calcularAlturaTrianguloIsosceles(lado1, base){
+  if (lado1 == base){
+    console.warn('Este no es un triangulo Isosceles');
+  } else {
+    // h = raizcuadrada((lado1**2) - (b**2)/4)
+    return Math.sqrt( (lado1 ** 2) - ( (base ** 2)) /4);
+  }
+}
+
+
 console.log(calcularTriangulo(5, 5, 6, 8));
 
 console.groupEnd("Triangulo");
