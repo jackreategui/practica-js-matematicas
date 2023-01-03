@@ -62,6 +62,17 @@ function calcularAlturaTrianguloIsosceles(lado1, base){
   }
 }
 
+// Triangulo escaleno
+
+// La base es el lado del triangulo de mayor longitud
+
+function calcularAlturaTrianguloEscaleno(lado1, lado2, lado3){
+  const x = (lado3 ** 2 - lado1 ** 2 + lado2 ** 2) / (2 * lado2);
+  const h = Math.sqrt(lado3 ** 2 - x ** 2);
+
+  return h;
+}
+
 
 console.log(calcularTriangulo(5, 5, 6, 8));
 
