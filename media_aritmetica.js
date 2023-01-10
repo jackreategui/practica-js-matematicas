@@ -1,4 +1,4 @@
-//Metodo for
+//*Metodo for
 
 // const salario = [212, 31121, 131, 311, 3532];
 
@@ -16,22 +16,8 @@
 
 // console.log(calcularSalarioPromedio(salario));
 
-//Metodo .reduce
 
-// const salario = [2, 31, 11, 31, 32];
-
-// function calcularSalarioPromedio(lista){
-
-
-//   const sumaLista = lista.reduce((acumulado, elemento) => acumulado + elemento);
-
-//   const promedio = sumaLista / lista.length;
-//   return promedio;
-// }
-
-// console.log(calcularSalarioPromedio(salario));
-
-//Saber si un numreo es par
+//*Saber si un numreo es par
 
 function esPar(lista){
   return !(lista.length % 2);
@@ -40,18 +26,43 @@ function esImpar(lista) {
   return (lista.length % 2);
 }
 
-function calcularMediana(lista) {
+function calcularMediana(listaDesordenada) {
+
+  const lista = ordenarLista(listaDesordenada);
   const listaEsPar = esPar(lista);
 
   if (listaEsPar) {
-    //
+    const mitad1 = lista[(lista.length / 2) - 1];
+    const mitad2 = lista[lista.length / 2];
+
+    const listaMitades = [mitad1, mitad2];
+
+    return calcularPromedio(listaMitades);
+
   } else{
     const indexMitadListaImpar = Math.floor(lista.length / 2);
     const medianaImpar = lista[indexMitadListaImpar];
-    console.log(indexMitadListaImpar);
+    // console.log(indexMitadListaImpar);
     console.log(medianaImpar);
     return medianaImpar;
   }
 }
 
-console.log (calcularMediana([10, 20, 30]));
+//*Saber ordenar una lista
+
+function ordenarLista(listaDesordenada) {
+  const lista = listaDesordenada.sort((a, b) => a - b);
+
+  return lista;
+}
+
+
+//*Metodo .reduce - Calcular promedio
+
+
+function calcularPromedio(lista){
+  const sumaLista = lista.reduce((acumulado, elemento) => acumulado + elemento);
+
+  const promedio = sumaLista / lista.length;
+  return promedio;
+}
