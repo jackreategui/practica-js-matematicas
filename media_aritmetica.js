@@ -26,6 +26,22 @@ function esImpar(lista) {
   return (lista.length % 2);
 }
 
+function calcularModa(lista) {
+  const listaElementos = {};
+
+  for (let i = 0; i < lista.length; i++) {
+    const element = lista[i];
+
+    if (listaElementos[element]) {
+      listaElementos[element] += 1;
+    } else {
+      listaElementos[element] = 1;
+    }
+  }
+  
+  console.log(listaElementos);
+}
+
 function calcularMediana(listaDesordenada) {
 
   const lista = ordenarLista(listaDesordenada);
