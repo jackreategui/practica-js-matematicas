@@ -1,3 +1,15 @@
+//* Ejemplo de colo se podria armar una clase para JS
+
+// class PlatziMath {
+//   static esPart() {};
+//   static esImpar() {};
+//   static calcularModa() {};
+//   static calcularMediana() {};
+//   ...
+// };
+
+const PlatziMath = {}; 
+
 //*Metodo for
 
 // const salario = [212, 31121, 131, 311, 3532];
@@ -19,14 +31,14 @@
 
 //*Saber si un numreo es par
 
-function esPar(lista){
+PlatziMath.esPar = function esPar(lista){
   return !(lista.length % 2);
 }
-function esImpar(lista) {
+PlatziMath.esImpar = function esImpar(lista) {
   return (lista.length % 2);
 }
 
-function calcularModa(lista) {
+PlatziMath.calcularModa = function calcularModa(lista) {
   const listaElementos = {};
 
   for (let i = 0; i < lista.length; i++) {
@@ -49,7 +61,7 @@ function calcularModa(lista) {
 
 }
 
-function calcularMediana(listaDesordenada) {
+PlatziMath.calcularMediana = function calcularMediana(listaDesordenada) {
 
   const lista = ordenarLista(listaDesordenada);
   const listaEsPar = esPar(lista);
@@ -73,7 +85,7 @@ function calcularMediana(listaDesordenada) {
 
 //*Metodo .reduce - Calcular promedio
 
-function calcularPromedio(lista){
+PlatziMath.calcularPromedio = function calcularPromedio(lista){
   const sumaLista = lista.reduce((acumulado, elemento) => acumulado + elemento);
 
   const promedio = sumaLista / lista.length;
@@ -82,7 +94,7 @@ function calcularPromedio(lista){
 
 //*Saber ordenar una lista
 
-function ordenarLista(listaDesordenada) {
+PlatziMath.ordenarLista = function ordenarLista(listaDesordenada) {
   const lista = listaDesordenada.sort((a, b) => a - b);
 
   return lista;
@@ -90,7 +102,7 @@ function ordenarLista(listaDesordenada) {
 
 //* Ordenar lista de array bidimencional
 
-function ordenarListaBidimensional(listaDesordenada, i) {
+PlatziMath.ordenarListaBidimensional = function ordenarListaBidimensional(listaDesordenada, i) {
   const lista = listaDesordenada.sort((a, b) => a[i] - b[i]);
 
   return lista;
