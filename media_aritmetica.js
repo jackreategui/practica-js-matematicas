@@ -39,7 +39,14 @@ function calcularModa(lista) {
     }
   }
   
-  console.log(listaElementos);
+  const listaArray = Object.entries(listaElementos);
+  const listaOrdenada = ordenarListaBidimensional(listaArray, 1);
+  const listaMaxNumber = listaOrdenada[listaOrdenada.length - 1];
+
+  const moda = listaMaxNumber[0];
+  // console.log(listaArray, listaOrdenada, listaMaxNumber);
+  return moda;
+
 }
 
 function calcularMediana(listaDesordenada) {
@@ -64,6 +71,15 @@ function calcularMediana(listaDesordenada) {
   }
 }
 
+//*Metodo .reduce - Calcular promedio
+
+function calcularPromedio(lista){
+  const sumaLista = lista.reduce((acumulado, elemento) => acumulado + elemento);
+
+  const promedio = sumaLista / lista.length;
+  return promedio;
+}
+
 //*Saber ordenar una lista
 
 function ordenarLista(listaDesordenada) {
@@ -72,13 +88,11 @@ function ordenarLista(listaDesordenada) {
   return lista;
 }
 
+//* Ordenar lista de array bidimencional
 
-//*Metodo .reduce - Calcular promedio
+function ordenarListaBidimensional(listaDesordenada, i) {
+  const lista = listaDesordenada.sort((a, b) => a[i] - b[i]);
 
-
-function calcularPromedio(lista){
-  const sumaLista = lista.reduce((acumulado, elemento) => acumulado + elemento);
-
-  const promedio = sumaLista / lista.length;
-  return promedio;
+  return lista;
 }
+
