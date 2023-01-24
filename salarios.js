@@ -1,6 +1,6 @@
 const salarios = [];
 salarios.push({
-  name: 'Juanita',
+  name: 'Jack',
   trabajos: [
     { year: 2018, empresa: 'Freelance', salario: 250, },
     { year: 2019, empresa: 'Freelance', salario: 250, },
