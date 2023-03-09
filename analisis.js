@@ -15,7 +15,6 @@ function medianaPorPersona(nombrePersona){
 
   const medianaSalarios = PlatziMath.calcularMediana(salarios);
 
-  console.log(salarios);
   return medianaSalarios;
 }
 
@@ -100,4 +99,28 @@ function proyeccionPorEmpresa(nombre) {
 
       return nuevaMediana;
     }
+}
+
+// Analisis general
+
+function medianaGeneral() {
+  const listaMedianas = salarios.map(
+    persona => medianaPorPersona(persona.name)
+  );
+  
+  const mediana = PlatziMath.calcularMediana(listaMedianas);
+
+  return mediana;
+};
+
+function medianaTopo10() {
+  const listaMedianas = salarios.map(
+    persona => medianaPorPersona(persona.name)
+  );
+
+  const medianasOrdenadas = PlatziMath.ordenarLista(listaMedianas);
+
+    console.log({medianasOrdenadas});
+
+
 }
