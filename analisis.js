@@ -120,7 +120,5 @@ function medianaTopo10() {
 
   const medianasOrdenadas = PlatziMath.ordenarLista(listaMedianas);
 
-    console.log({medianasOrdenadas});
-
-
+  console.log({ medianasOrdenadas });
 }
