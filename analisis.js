@@ -120,5 +120,13 @@ function medianaTopo10() {
 
   const medianasOrdenadas = PlatziMath.ordenarLista(listaMedianas);
 
-  console.log({ medianasOrdenadas });
+  const cantidad = listaMedianas.length / 10;
+  const limite = listaMedianas.length - cantidad;
+  
+  const top10 = medianasOrdenadas.splice(limite, medianasOrdenadas.length);
+  
+  const medianaTop10 = PlatziMath.calcularMediana(top10);
+  return medianaTop10;
+  // Me todos para hacer el corte
+  // slice y splice
 }
